@@ -1,5 +1,7 @@
 {
 	"name": "forbidden_island_ru",
+	"url": "https://printgames.ru/wp-content/uploads/2017/12/fisland.pdf",
+	"dpi": 200,
 	"pages": [
 		{},
 		{"type": "grid", "dim": [3, 4], "xy": [49, 82], "size": [518, 518], "spacing": [0, 1], "naming": "island_tile_{}"},

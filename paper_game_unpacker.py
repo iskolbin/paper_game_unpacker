@@ -1,15 +1,18 @@
-# Needed:
-#   1. PDF with paper-game (from printgames.ru, for instance)
-#   2. Config in JSON
-
 from PIL import Image
 from PIL import ImageDraw
 from sys import argv
+from urllib.request import urlretrieve
 import pdf2image
 import json
 import os
+import hashlib
 
-pdf_path, config_path = argv[1], argv[2]
+config_path = argv[1]
+thread_count = int(argv[2]) if len(argv) > 2 else 1
+
+def random_string(length):
+   letters = string.ascii_lowercase
+   return ''.join(random.choice(letters) for i in range(length))
 
 with open(config_path, "r") as f:
     config = json.load(f)
@@ -17,8 +20,23 @@ with open(config_path, "r") as f:
 if "name" in config and not os.path.exists(config["name"]):
     os.makedirs(config["name"])
 
-print("Converting PDF to list of images")
-images = pdf2image.convert_from_path(pdf_path)
+if not os.path.exists("tmp"):
+    os.makedirs("tmp")
+
+if config["url"].startswith("http"):
+    pdf_path = "tmp/" + hashlib.sha256(config["url"].encode("utf-8")).hexdigest() + ".pdf"
+    if not os.path.isfile(pdf_path):
+        print("Downloading PDF from {} to {}".format(config["url"], pdf_path))
+        urlretrieve(config["url"], pdf_path)
+    else:
+        print("Taking cached PDF from {}".format(pdf_path)) 
+else:
+    pdf_path = config["url"]
+
+dpi = config.get("dpi", 200)
+
+print("Converting PDF to list of images with DPI={} using {} threads".format(dpi, thread_count))
+images = pdf2image.convert_from_path(pdf_path, dpi = dpi, thread_count = thread_count)
 
 def img_out_path(name):
     return ((config["name"] + "/") if "name" in config else "") + name + ".png"
