@@ -10,7 +10,7 @@
 		{"type": "grid", "direction": [-1, 1], "dim": [3, 4], "xy": [49, 82], "size": [518, 518], "naming_counter": 12, "naming": "island_tile_back_{}"},
 		{},
 		{"type": "grid", "dim": [3, 3], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming": "red_card_{}", "transparent": "#f40a03"},
-		{"type": "custom", "images": {"red_card_back": [50, 50, 490, 700]}},
+		{"type": "custom", "images": {"red_card_back": [50, 50, 540, 750]}},
 		{"type": "grid", "dim": [3, 3], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming_counter": 9, "naming": "red_card_{}", "transparent": "#f40a03"},
 		{},
 		{"type": "grid", "dim": [3, 3], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming_counter": 18, "naming": "red_card_{}", "transparent": "#f40a03"},
@@ -18,13 +18,13 @@
 		{"type": "grid", "dim": [1, 1], "xy": [91, 1520], "size": [490, 700], "spacing": [2, 1], "naming_counter": 27, "naming": "red_card_{}", "transparent": "#f40a03"},
 		{},
 		{"type": "grid", "dim": [3, 3], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming": "blue_card_{}", "transparent": "#f40a03"},
-		{"type": "custom", "images": {"blue_card_back": [50, 50, 490, 700]}},
+		{"type": "custom", "images": {"blue_card_back": [50, 50, 540, 750]}},
 		{"type": "grid", "dim": [3, 3], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming_counter": 9, "naming": "blue_card_{}", "transparent": "#f40a03"},
 		{},
 		{"type": "grid", "dim": [3, 2], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming_counter": 18, "naming": "blue_card_{}", "transparent": "#f40a03"},
 		{},
-		{"type": "grid", "dim": [3, 2], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming_counter": 18, "naming": "role_card_{}", "transparent": "#f40a03"},
-		{"type": "grid", "direction": [-1, 1], "dim": [3, 2], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming_counter": 18, "naming": "role_card_back_{}", "transparent": "#f40a03"},
+		{"type": "grid", "dim": [3, 2], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming": "role_card_{}", "transparent": "#f40a03"},
+		{"type": "grid", "direction": [-1, 1], "dim": [3, 2], "xy": [91, 118], "size": [490, 700], "spacing": [2, 1], "naming": "role_card_back_{}", "transparent": "#f40a03"},
 		{}
 	]
 }
